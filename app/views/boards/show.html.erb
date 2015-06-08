@@ -1,0 +1,7 @@
+<% if @posts == nil %>
+	<p>Uh oh! No teachers have registered to teach this subject, yet.</p>
+<% else %>
+	<%= @posts.each do |post| %>
+		<p>Name of Instructor:</p><%= post.name %>
+	<% end %>
+<% end %>

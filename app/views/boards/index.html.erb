@@ -1,0 +1,3 @@
+<% @boards.each do |board| %>
+	<br><%= link_to board.name, board_path(board) %></br>
+<% end %>
