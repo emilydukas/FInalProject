@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150609190829) do
+=======
+ActiveRecord::Schema.define(version: 20150609085824) do
+>>>>>>> refs/remotes/origin/master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +33,6 @@ ActiveRecord::Schema.define(version: 20150609190829) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "board_id"
-    t.integer  "user_id"
     t.text     "phone_number"
     t.string   "email_address"
     t.string   "image_url"
@@ -48,9 +51,12 @@ ActiveRecord::Schema.define(version: 20150609190829) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+<<<<<<< HEAD
     t.text     "phone_number"
     t.string   "name"
     t.string   "image_url"
+=======
+>>>>>>> refs/remotes/origin/master
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
