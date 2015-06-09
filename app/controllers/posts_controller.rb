@@ -4,21 +4,21 @@ class PostsController < ApplicationController
 	end
 
 	def show 
-		@boards = Board.find params[:board_id]
-		@post = @boards.post.find params[:id]
+		@board = Board.find params[:board_id]
+		@post = @board.posts.find params[:id]
 	end
 
 	def new
-		@boards = Board.find params[:board_id]
-		@post = @boards.post.new
+		@board = Board.find params[:board_id]
+		@post = @board.posts.new
 	end
 
 	def create
-		@boards = Board.find params[:board_id]
-		@board = @user.boards.create(post_params)
+		@board = Board.find params[:board_id]
+		@post = @board.posts.create(post_params)
  
-	    if @board.save
-	      redirect_to user_board_path(@user.id,@board.id)
+	    if @post.save
+	      redirect_to user_post_path(current_user,@post)
 	    else
 	      render 'new'
 	    end
