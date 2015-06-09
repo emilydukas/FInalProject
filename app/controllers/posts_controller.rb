@@ -27,7 +27,30 @@ class PostsController < ApplicationController
 	    end
 	end
 
+	def edit
+		@board = Board.find params[:board_id]
+		@post = @board.posts.find params[:id]
+	end
 
+	def update
+		@board = Board.find params[:board_id]
+		@post = @board.posts.find params[:id]
+
+		if @post.update(post_params)
+			redirect_to board_path(@board)
+		else
+			render :edit
+		end
+	end
+	
+
+	def destroy
+		@board = Board.find params[:board_id]
+		@post = @board.posts.find params[:id]
+
+		@post.destroy
+		redirect_to board_path(@board)
+	end
 
 	private 
 		def post_params
