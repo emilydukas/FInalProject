@@ -1,9 +1,15 @@
-<% if @posts == nil %>
-	<p>Uh oh! No teachers have registered to teach this subject, yet.</p>
-<% else %>
-	<%= @posts.each do |post| %>
-		<p>Name of Instructor:</p><%= post.name %>
+<h2><%=  @board.name %></h2>
+<% if true %>
+	<p><% @posts.each do |post| %>
+
+		<h4><%= post.title %><h4>
+		<h6><%= link_to post.name, board_post_path(@board,post) %></h6>
+		<h6><%= post.description %></h6>
+		<h6><%= image_tag post.image_url %></h6>
 	<% end %>
+	</p>
+<% else %>
+	<p>Uh oh! No teachers have registered to teach this subject, yet.</p>
 <% end %>
 
 <%= link_to 'Add Post', new_board_post_path(@board) %>

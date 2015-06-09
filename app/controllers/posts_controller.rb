@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
+	 before_action :authenticate_user!
+
 	def index
-		@posts = current_user.Post.all # each user gets to see his/her posts
+		@board = Board.find params[:board_id]
+		@posts = @board.posts # each user gets to see his/her posts
 	end
 
 	def show 
@@ -10,17 +13,17 @@ class PostsController < ApplicationController
 
 	def new
 		@board = Board.find params[:board_id]
-		@post = @board.posts.new
+		@post = @board.posts.build
 	end
 
 	def create
 		@board = Board.find params[:board_id]
-		@post = @board.posts.create(post_params)
+		@post = @board.posts.build(post_params)
  
 	    if @post.save
-	      redirect_to user_post_path(current_user,@post)
+	      redirect_to board_path(@board)
 	    else
-	      render 'new'
+		   render 'new'
 	    end
 	end
 
@@ -28,6 +31,6 @@ class PostsController < ApplicationController
 
 	private 
 		def post_params
-			params.require(:post).permit(:name, :description, :phone_number, :email_address)
+			params.require(:post).permit(:name, :title, :description, :phone_number, :email_address)
 		end
 end

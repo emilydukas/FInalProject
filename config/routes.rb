@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :posts
+  # resources :posts
   
   root 'welcome#index'
 

@@ -1,0 +1,9 @@
+<p>
+	<%= @post.title %></br>
+	<%= @post.name %></br>
+	<%= @post.description %></br>
+	<%= @post.phone_number %></br>
+	<%= @post.email_address %></br>
+</p>
+
+<%= link_to 'Edit', edit_board_post_path(@board,@post) %> | <%= link_to 'Delete', board_path(@board) %>

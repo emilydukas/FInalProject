@@ -1,0 +1,37 @@
+<%= form_for [@board,@post] do |f| %>
+	<h3>
+		<%= f.label :topic_of_instruction %>
+		<%= f.text_field :title, :placeholder => "ex. Calculus, Drawing, Soccer", :size => 30 %>
+	</h3>
+
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name, :placeholder => "John Doe" %>
+	</p>
+
+	<p>
+		<%= f.label :Your_class %>
+		<%= f.text_area :description, :placeholder => "Describe what you are interested in teaching." %>
+	</p>
+
+	<p>
+		<%= f.label :phone_number %>
+		<%= f.text_field :phone_number, :placeholder => "ex. 075555555" %>
+	</p>
+
+	<p>
+		<%= f.label :email_address %>
+		<%= f.text_field :email_address, :placeholder => "johndoe@johndoe.com" %>
+	</p>
+
+	<p>
+		<%= f.label :Insert_Image_URL %>
+		<%= f.text_field :image_url, :placeholder => "ex. https://imageurl.com" %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+
+<% end %>
