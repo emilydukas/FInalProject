@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
   <title>FinalProject</title>
@@ -23,8 +23,11 @@
 <% end %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
-<% end %>
 
+<% end %>
+<% if false %>
+  <%= render 'layouts/nav' %>
+<% end %>
 <%= yield %>
 
 </body>
