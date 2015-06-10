@@ -37,10 +37,14 @@ class PostsController < ApplicationController
 		@board = Board.find params[:board_id]
 		@post = @board.posts.find params[:id]
 
-		if @post.update(post_params)
-			redirect_to board_path(@board)
+		if @post.user == current_user
+			if @post.update(post_params)
+				redirect_to board_path(@board)
+			else
+				render :edit
+			end
 		else
-			render :edit
+			redirect_to root, alert: "You cannot edit someone else's post"
 		end
 	end
 	
@@ -51,7 +55,7 @@ class PostsController < ApplicationController
 
 		if @post.user == current_user
 				else
-			redirect_to :root, alert: "You cannot delete someone else's class"
+			redirect_to :root, alert: "You cannot delete someone else's post"
 		end	
 			@post.destroy
 			redirect_to board_path(@board)
