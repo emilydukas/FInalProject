@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   resources :users do
-    resources :boards
+    resources :posts
   end
 
   resources :boards do 
