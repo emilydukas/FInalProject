@@ -48,8 +48,12 @@ class PostsController < ApplicationController
 		@board = Board.find params[:board_id]
 		@post = @board.posts.find params[:id]
 
-		@post.destroy
-		redirect_to board_path(@board)
+		if @post.user_id == current_user	
+			@post.destroy
+			redirect_to board_path(@board)
+		else
+			redirect_to :root, alert: "You cannot delete someone else's class"
+		end
 	end
 
 	private 

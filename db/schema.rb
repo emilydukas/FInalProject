@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20150609190829) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "board_id"
-    t.integer  "user_id"
     t.text     "phone_number"
     t.string   "email_address"
     t.string   "image_url"
@@ -48,7 +47,6 @@ ActiveRecord::Schema.define(version: 20150609190829) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.text     "phone_number"
     t.string   "name"
     t.string   "image_url"
   end
