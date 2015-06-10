@@ -19,7 +19,8 @@ class PostsController < ApplicationController
 	def create
 		@board = Board.find params[:board_id]
 		@post = @board.posts.build(post_params)
- 
+ 		@post.user = current_user
+
 	    if @post.save
 	      redirect_to board_path(@board)
 	    else
@@ -48,12 +49,13 @@ class PostsController < ApplicationController
 		@board = Board.find params[:board_id]
 		@post = @board.posts.find params[:id]
 
-		if @post.user == current_user	
+		if @post.user == current_user
+				else
+			redirect_to :root, alert: "You cannot delete someone else's class"
+		end	
 			@post.destroy
 			redirect_to board_path(@board)
-		else
-			redirect_to :root, alert: "You cannot delete someone else's class"
-		end
+
 	end
 
 	private 
