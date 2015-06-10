@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   # resources :posts
   
-  root 'welcome#index'
+  root 'boards#index'
 
 
   # Example of regular route:
