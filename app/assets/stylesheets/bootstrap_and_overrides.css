@@ -6,6 +6,6 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
-  .logo {
-  	color = white;
+  #footer {
+  	margin-top: 0px;
   }

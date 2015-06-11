@@ -8,4 +8,4 @@
 
 Board.delete_all
 
-boards = Board.create!([{name: "Arts & Craft"}, {name: "Performing Arts"}, {name: "Math & Science"}, {name: "Language Arts"}, {name: "Athletics"}])
+boards = Board.create!([{name: "Arts & Crafts"}, {name: "Performing Arts"}, {name: "Math & Science"}, {name: "Language Arts"}, {name: "Athletics"}])
