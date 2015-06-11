@@ -4,18 +4,15 @@
 
 	<p><% @posts.each do |post| %>
 
-		<h4><%= link_to post.title, board_post_path(@board,post) %><h4>
+
+		<h4><%= link_to post.title, board_post_path(@board,post) %></h4>
 		<h6><%= post.name %></h6>
 		<h6><%= post.description %></h6>
-		<h6><% if current_user.image_url == "" %>
-				<%= image_tag(current_user.avatar.url(:thumb)) %></h6>
-	           <% else %>
-	            <%= image_tag current_user.image_url %></h6>
-	        <% end %>
+			
+		
 	<% end %>
 	</p>
 <% else %>
 	<p>Uh oh! No teachers have registered to teach this subject, yet.</p>
 <% end %>
-
 <%= link_to 'Add Post', new_board_post_path(@board) %>
