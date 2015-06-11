@@ -4,10 +4,9 @@
   <%= devise_error_messages! %>
 
 
-<div class="field">
-  
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar %> OR
+<div>
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %> OR
 
     <%= f.label :image_url %><br />
     <%= f.text_field :image_url, autofocus: true %>
@@ -46,4 +45,6 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+
+<%= render "users/shared/links" %>
 
