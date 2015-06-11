@@ -8,9 +8,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @user = User.new(sign_up_params)
+    if @user.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -36,11 +41,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
-
-  # If you have extra params to permit, append them to the sanitizer.
+  protected
+  
+  # # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
+  #   devise_parameter_sanitizer.for(:sign_up) << :phone_num
   # end
 
   # If you have extra params to permit, append them to the sanitizer.

@@ -21,10 +21,18 @@
 
 .box {
 	padding: 5px;
-	border-style: solid;
-    background: rgba(34,34,34,0.75);
+    background: rgba(200,200,200,0.5);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.ahh{
+	text-align: center;
 }
 
 .navbar {
 	margin-bottom: 0;
 }
+
+
+

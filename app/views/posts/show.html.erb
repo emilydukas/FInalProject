@@ -20,9 +20,9 @@
 
 
 <% if @post.user == current_user %>
-<%= link_to 'Edit', edit_board_post_path(@board,@post) %> | <%= link_to 'Delete', board_post_path(@board,@post),
+<%= link_to 'Edit', edit_board_post_path(@board,@post) %> | <%= link_to 'Delete' , board_post_path(@board,@post),
 	method: :delete,
 	data: { confirm: 'Are you sure?' } %>
 <% end %>
 
-<%= link_to "Go Back to #{@board.name} Board", board_path(@board) %>
+<p><%= link_to "Go Back to #{@board.name} Board", board_path(@board) %></p>
