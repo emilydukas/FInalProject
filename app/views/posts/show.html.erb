@@ -1,4 +1,14 @@
-<p>
+<% @post.image_url = current_user.image_url %>
+
+<div>
+    <p style="float: left;">
+    	<% if @post.image_url == "" %>
+	        <%= image_tag(@post.user.avatar.url(:thumb)) %></li>
+	    <% else %>
+	        <%= image_tag @post.image_url %></li>
+	    <% end %>
+    </p>
+    <p>
 	<%= @post.title %></br>
 	<%= @post.user.name %></br>
 	<%= @post.description %></br>
@@ -6,6 +16,8 @@
 	<%= @post.user.email %></br>
 
 </p>
+</div>
+
 
 <% if @post.user == current_user %>
 <%= link_to 'Edit', edit_board_post_path(@board,@post) %> | <%= link_to 'Delete', board_post_path(@board,@post),
