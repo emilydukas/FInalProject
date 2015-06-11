@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require bootply
-//= require scripts
 //= require turbolinks
+//= require scripts
 //= require_tree .
