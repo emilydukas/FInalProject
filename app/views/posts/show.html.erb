@@ -1,9 +1,10 @@
 <p>
 	<%= @post.title %></br>
-	<%= @post.name %></br>
+	<%= @post.user.name %></br>
 	<%= @post.description %></br>
-	<%= @post.phone_number %></br>
-	<%= @post.email_address %></br>
+	<%= @post.user.phone_num %></br>
+	<%= @post.user.email %></br>
+
 </p>
 
 <% if @post.user == current_user %>
@@ -11,3 +12,5 @@
 	method: :delete,
 	data: { confirm: 'Are you sure?' } %>
 <% end %>
+
+<%= link_to "Go Back to #{@board.name} Board", board_path(@board) %>

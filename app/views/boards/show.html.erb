@@ -14,4 +14,6 @@
 	<p>Uh oh! No teachers have registered to teach this subject, yet.</p>
 <% end %>
 
-<%= link_to 'Add Post', new_board_post_path(@board) %>
+<%= link_to 'Add Post', new_board_post_path(@board) %> |
+
+<%= link_to "Go Back to All Boards", boards_path %>

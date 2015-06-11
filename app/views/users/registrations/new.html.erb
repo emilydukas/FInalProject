@@ -3,20 +3,30 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div>
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar %>
-        
-    </div>
 
-  <div class="field">
+<div class="field">
+  
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %> OR
+
     <%= f.label :image_url %><br />
     <%= f.text_field :image_url, autofocus: true %>
   </div>  
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :placeholder => "John Doe", autofocus: true %>
+  </div>
+  
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, :placeholder => "johndoe@johndoe.com", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_num %><br />
+    <%= f.text_field :phone_num, :placeholder => "ex. 075555555", autofocus: true %>
   </div>
 
   <div class="field">
@@ -37,4 +47,3 @@
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
