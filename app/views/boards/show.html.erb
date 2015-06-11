@@ -2,21 +2,27 @@
 <% post=@posts %>
 <% if post.empty? == false %>
 
-	<p><% @posts.each do |post| %>
-
-
-		<h4><%= link_to post.title, board_post_path(@board,post) %></h4>
-		<h6><%= post.name %></h6>
-		<h6><%= post.description %></h6>
-			
+	<% @posts.each do |post| %>
+		
+			<div class="col-md-2">
+		    	<p style="float: left;">
+		    		<% if post.user.image_url == "" %>
+	            		<%= image_tag(post.user.avatar.url(:thumb), size: "100x100", :class => "board_posts_img") %></p>
+	            	<% else %>
+	            		<%= image_tag(post.user.image_url, size: "100x100" , :class => "board_posts_img") %></p>
+	            	<% end %>
+		    	
+				<h4><%= link_to post.title, board_post_path(@board,post) %></h4>
+				<h6><%= post.name %></h6>
+				<h6><%= post.description %></h6>
+				<h6><%= image_tag post.image_url %></h6>
+			</div>
 		
 	<% end %>
-	</p>
+	
 <% else %>
 	<p>Uh oh! No teachers have registered to teach this subject, yet.</p>
 <% end %>
 
-<%= link_to 'Add Post', new_board_post_path(@board) %> |
 
-<%= link_to "Go Back to All Boards", boards_path %>
-
+	<%= link_to 'Add Post', new_board_post_path(@board) %>
