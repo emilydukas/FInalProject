@@ -1,3 +1,64 @@
+
+
+
+
+
+
+<div class = "container">
+	<h2><%=  @board.name %></h2>
+		<% post=@posts %>
+		<% if post.empty? == false %>
+			<% @posts.each do |post| %>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-8">
+			    	<p>
+			    	<head>
+<!-- flooble Expandable Content header start -->
+<script language="javascript">
+// Expandable content script from flooble.com.
+// For more information please visit:
+//   http://www.flooble.com/scripts/expand.php
+// Copyright 2002 Animus Pactum Consulting Inc.
+//----------------------------------------------
+var ie4 = false; if(document.all) { ie4 = true; }
+function getObject(id) { if (ie4) { return document.all[id]; } else { return document.getElementById(id); } }
+function toggle(link, divId) { var lText = link.innerHTML; var d = getObject(divId);
+ if (lText == '+') { link.innerHTML = '−'; d.style.display = 'block'; }
+ else { link.innerHTML = '+'; d.style.display = 'none'; } }
+</script>
+<!-- flooble Expandable Content header end   -->
+                
+</head>
+
+			    	<!-- flooble Expandable Content box start -->
+<div style="border: 1px solid #000000; padding: 0px; background: #EEEEEE; "><table border="0" cellspacing="0" cellpadding="2" width="100%" style="background: #000000; color: #FFFFFF; "><tr><td><% if post.user.image_url == "" %>
+			            			<p><%= image_tag(post.user.avatar.url(:thumb), size: "100x100", :class => "board_posts_img") %></p>
+			            		<% else %>
+			            			<p><%= image_tag(post.user.image_url, size: "100x100" , :class => "board_posts_img") %></p>
+			            		<% end %><h4>Class: <%= post.title %></h4>
+								<h6>Name of Instructor: <%= post.user.name %></h6>
+								<h6>Description: <%= post.description %></h6></td><td align="right">
+[<a title="show/hide" id="exp1434064966_link" href="javascript: void(0);" onclick="toggle(this, 'exp1434064966');"  style="text-decoration: none; color: #FFFFFF; ">−</a>]</td></tr></table>
+<div id="exp1434064966" style="padding: 3px;"><li><%= post.user.phone_num %></li>
+								    <li><%= post.user.email %></li></div>
+</div><noscript><a href="http://www.flooble.com/scripts/expand.php">this expanable content box is made using a 
+free javascript from flooble</a> | </noscript>
+<!-- flooble Expandable Content box end  -->
+			    		
+					</p>
+				</div>
+			<% end %>
+		
+	<% else %>
+		<p>Uh oh! No teachers have registered to teach this subject, yet.</p>
+	<% end %>	
+<div class="ahh">
+<%= link_to 'Add Post', new_board_post_path(@board) %>
+</div>
+
+
+
+
+<% if false %>
 <div class = "container">
 	<h2><%=  @board.name %></h2>
 		<% post=@posts %>
@@ -27,3 +88,4 @@
 <div class="ahh">
 <%= link_to 'Add Post', new_board_post_path(@board) %>
 </div>
+<% end %>
