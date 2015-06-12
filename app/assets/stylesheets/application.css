@@ -21,9 +21,13 @@
 
 .box {
 	padding: 5px;
-    background: rgba(200,200,200,0.5);
+    background: rgba(200,200,200,0.75);
     border-radius: 10px;
     margin: 5px;
+}
+
+.words {
+  text-align: right;
 }
 
 .ahh{
@@ -35,17 +39,81 @@
 }
 
 
-.post-thumb {
-    float: left
+
+
+
+.toggle-box {
+  display: none;
 }
-.post-thumb img {
-    display: block
+
+.toggle-box + label {
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  line-height: 21px;
+  margin-bottom: 5px;
 }
-.post-content {
-    margin-left: 70px
+
+.toggle-box + label + div {
+  display: none;
+  margin-bottom: 10px;
 }
-.post-title {
-    font-weight: bold;
-    font-size: 100%
+
+.toggle-box:checked + label + div {
+  display: block;
+}
+
+.toggle-box + label:before {
+  background-color: #4F5150;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  content: "+";
+  display: inline-block;
+/*  float: left;*/
+  font-weight: bold;
+  height: 20px;
+  line-height: 20px;
+  margin-right: 5px;
+  text-align: center;
+  width: 20px;
+}
+
+.toggle-box:checked + label:before {
+  content: "\2212";
+}
+
+.board-background-11 {
+  background-image: url("http://sayheyjanaye.com/wp-content/uploads/2015/01/mbbrushes.jpg");
+  background-size: cover;
+}
+
+.board-background-12 {
+background-image: url("http://www.worldcitiescultureforum.com/sites/default/files/ballet_0.jpg");
+background-size: cover;
+color: white;
+}
+
+.board-background-13 {
+  background-image: url("http://www.inc.com/uploaded_files/image/970x450/091212_Chalkboard_1725x810-PAN_20345.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.board-background-14 {
+  background-image: url("https://vmcfashion.files.wordpress.com/2012/02/p1120226.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.board-background-15 {
+  background-image: url("http://solidiumtech.com/wp-content/uploads/2015/03/slide2_0003_football-field-at-night.png");
+  background-size: cover;
+  color: white;
+}
+
+.post {
+  display: inline-block;
 }
 
