@@ -11,29 +11,32 @@
 			    	<p style="float: left;">
 			    		<div class="box">
 				    		<input class="toggle-box" id="identifier-<%= index %>" type="checkbox" >
-							<label for="identifier-<%= index %>">
-									<div><h3>Class: <%= post.title %></h3></div>
-									<div class="post">
-						    			<% if post.user.image_url == "" %>
-					            			<div><%= image_tag(post.user.avatar.url(:thumb), size: "100x100", :class => "board_posts_img") %></div>
-					            		<% else %>
-					            			<div><%= image_tag(post.user.image_url, size: "100x100" , :class => "board_posts_img") %></div>
-					            		<% end %>
-			            		
-						            	<div>
-											<h6>Name of Instructor: <%= post.user.name %></h6>
-											<h6>Description of Class: <%= post.description %></h6>
+				    			
+								<label for="identifier-<%= index %>">
+										<div><h3><%= post.title %></h3></div>
+										<div class="post">
+							    			<% if post.user.image_url == "" %>
+						            			<div><%= image_tag(post.user.avatar.url(:thumb), size: "100x100", :class => "board_posts_img") %></div>
+						            		<% else %>
+						            			<div><%= image_tag(post.user.image_url, size: "100x100" , :class => "board_posts_img") %></div>
+						            		<% end %>
+				            		
+							            	<div>
+												<h6>Name of Instructor: <%= post.user.name %></h6>
+												<h6>Description of Class: <%= post.description %></h6>
+											</div>
 										</div>
-									</div>
-							</label>
-							<div class="words"><p><%= post.user.phone_num %></p>
-							<p><%= post.user.email %></p>
-							<% if post.user == current_user %>
-								<p><%= link_to 'Edit', edit_board_post_path(@board,post) %> | <%= link_to 'Delete' , board_post_path(@board,post),
-									method: :delete,
-									data: { confirm: 'Are you sure?' } %></p>
-								<% end %>
-							</div>
+								</label>
+								<div class="words">
+									<p><%= post.user.phone_num %></p>
+									<p><%= post.user.email %></p>
+										<% if post.user == current_user %>
+											<p><%= link_to 'Edit', edit_board_post_path(@board,post) %> | <%= link_to 'Delete' , board_post_path(@board,post),
+												method: :delete,
+												data: { confirm: 'Are you sure?' } %></p>
+										<% end %>
+								</div>
+
 			    		</div>
 			    			
 						
@@ -44,7 +47,7 @@
 		<p>Uh oh! No teachers have registered to teach this subject, yet.</p>
 	<% end %>	
 <div class="ahh">
-<%= link_to 'Add Post', new_board_post_path(@board) %>
+	<h3><%= link_to 'Add Post', new_board_post_path(@board) %></h3>
 </div>
 
 <% if false %>
